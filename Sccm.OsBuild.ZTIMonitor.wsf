@@ -1,0 +1,41 @@
+<job id="ZTIMonitor">
+	<script language="vbscript" src="ZTIUtility.vbs"/>
+	<script language="VBScript" src="ZTIDataAccess.vbs"/>
+	<script language="vbscript">
+ 
+ 
+' to use this
+
+' Save above script (place this in the Scripts folder of your MDT package. Im using the name "Sccm.OsBuild.ZTIMonitor.wsf"
+' Edit your existing task sequence - place a new run command line step below your Use Toolkit/ Gather steps.
+' The command line to run is : cmd /c START %scriptroot%\ZTIMonitor.wsf
+' Copy this step to run after every reboot your TS performs.
+' Save your TS
+' Run an OSD, and you should see your monitoring events appearing in MDT Deployment Workbench once the monitoring step is hit
+
+Dim oTypeLib, oEnv
+Dim ltiGUID, varValue
+
+Set oTypeLib = CreateObject("Scriptlet.TypeLib")
+ltiGUID =  oTypeLib.Guid
+Set oEnv = CreateOBject("Microsoft.SMS.TSEnvironment")
+oEnv("LTIGUID") = ltiGUID
+
+'oEnv("EventService") = "http://MDTSERVERNAME:9800" - not needed as we have in customsettings.ini
+ 
+i = 0 
+Do Until i <> 0
+ 
+	If varValue = oEnv("_SMSTSNextInstructionPointer") then
+	'do something
+	Else
+		varValue = oEnv("_SMSTSNextInstructionPointer")
+		oLogging.CreateEvent 90210, LogTypeInfo, "Posting MDT Monitoring Event" ,""
+	End If
+	 
+	Wscript.Sleep 1000
+	
+Loop
+ 
+	</script>
+</job>

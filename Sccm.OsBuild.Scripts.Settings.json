@@ -1,0 +1,81 @@
+{
+	"Generic_Settings": 
+	{
+		"_Comment": "This section contains generic settings that may be useful to more than one script. For script specific settings create a section calling it the same as the script. It's best to replace . with _ in names.",
+		"SMTP_Server": "smtp.server.com",
+		"Email_To": "supprt@server.com",
+		"CSS_Style": "<style>body {
+								font: normal 11px auto \"Trebuchet MS\", Verdana, Arial, Helvetica, sans-serif;
+								color: #4f6b72;
+								background: #E6EAE9;
+							}
+							a {
+								color: #c75f3e;
+							}
+							#mytable {
+								width: 700px;
+								padding: 0;
+								margin: 0;
+							}
+							caption {
+								padding: 0 0 5px 0;
+								width: 700px;	 
+								font: italic 11px \"Trebuchet MS\", Verdana, Arial, Helvetica, sans-serif;
+								text-align: right;
+							}
+							th {
+								font: bold 11px \"Trebuchet MS\", Verdana, Arial, Helvetica, sans-serif;
+								color: #4f6b72;
+								border-right: 1px solid #C1DAD7;
+								border-bottom: 1px solid #C1DAD7;
+								border-top: 1px solid #C1DAD7;
+								letter-spacing: 2px;
+								text-transform: uppercase;
+								text-align: left;
+								padding: 6px 6px 6px 12px;
+								background: #CAE8EA
+							}
+							th.nobg {
+								border-top: 0;
+								border-left: 0;
+								border-right: 1px solid #C1DAD7;
+								background: none;
+							}
+							td {
+								border-right: 1px solid #C1DAD7;
+								border-bottom: 1px solid #C1DAD7;
+								background: #fff;
+								padding: 6px 6px 6px 12px;
+								color: #4f6b72;
+							}
+							td.alt {
+								background: #F5FAFA;
+								color: #797268;
+							}
+							th.spec {
+								border-left: 1px solid #C1DAD7;
+								border-top: 0;
+								background: #fff
+								font: bold 10px \"Trebuchet MS\", Verdana, Arial, Helvetica, sans-serif;
+							}
+							th.specalt {
+								border-left: 1px solid #C1DAD7;
+								border-top: 0;
+								background: #f5fafa;
+								font: bold 10px \"Trebuchet MS\", Verdana, Arial, Helvetica, sans-serif;
+								color: #797268;
+							}</style>"
+	},
+	
+	"Sccm_OsBuild_StartEmail":
+	{
+		"_Comment": "This section contains settings for Sccm.OsBuild.StartEmail script",
+		"SCCMOsdReportURL": "http://sccmserver01v.server.com/ReportServer_INF1/Pages/ReportViewer.aspx?%2fConfigMgr_P01%2fDeskside%2fDeskside+Status+of+a+task+sequence+deployment+on+an+unknown+destination+computer&rs:Command=Render&AdvertID=P012004C&MACAddress="
+	},
+	
+	"Sccm_OsBuild_Failure":
+	{
+		"_Comment": "This section contains settings for Sccm.OsBuild.Failure script",
+		"SCCMOsdReportURL": "http://sccmserver01v.server.com/ReportServer_INF1/Pages/ReportViewer.aspx?%2fConfigMgr_P01%2fDeskside%2fDeskside+Status+of+a+task+sequence+deployment+on+an+unknown+destination+computer&rs:Command=Render&AdvertID=P012004C&MACAddress="
+	}
+}
